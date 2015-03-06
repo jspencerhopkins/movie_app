@@ -1,8 +1,8 @@
 <center>
   <h1>Search for a movie</h1>
 
-  <%= form_tag("/search", method: :get) do %>
-    <%= text_field_tag(:query, nil) %>
+  <%= form_tag("/search", method: "get") do %>
+    <%= text_field_tag(:query) %>
   <% end %>
 
 </center>
