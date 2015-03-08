@@ -1,0 +1,28 @@
+
+<table>
+
+  <% @movie.each do |movie| %>
+
+    <tr>
+      <td>   
+        
+        <%= link_to movie_path(movie.id) do %>
+          <%= image_tag("#{@configuration.base_url}w154#{movie.poster_path}") if movie.poster_path %>
+        <% end %>
+
+      </td> 
+
+      <td>
+        <%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date[0..3] %>) <br>
+        Staring: <br>
+        <% Tmdb::Movie.casts(movie.id).first(3).each do |cast| %>
+          <%= link_to cast['name'], person_path(cast['id']) %> |
+        <% end %>
+      </td>
+
+
+    </tr>
+
+  <% end %>
+
+</table>
