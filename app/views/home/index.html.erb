@@ -1,8 +1,25 @@
+<div class="jumbotron">
+  <div id="overlay">
+    <h1 style="text-align:center;">Search for a movie</h1>
+        <%= form_tag("/search", method: "get") do %>
+          <div class="col-md-6 col-md-offset-3">
+            <div class="input-group input-group-lg">
+              <%= text_field_tag :query %>
+              <span class="input-group-btn"><%= submit_tag "Search", name: nil, class: "btn btn-default" %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 
 <center>
   <h1>Search for a movie</h1>
 
-  <%= form_tag("/search", method: "get") do %>
-    <%= text_field_tag(:query) %>
-  <% end %>
+  
+    
 
-</center>
+
+</center> -->
